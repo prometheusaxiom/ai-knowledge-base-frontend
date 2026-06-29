@@ -1,0 +1,96 @@
+.add-file-dialog {
+  min-width: 360px;
+  max-width: 480px;
+  overflow: hidden;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.dialog-header h2 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0.25rem 2rem 0;
+  color: #64748b;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.dialog-actions{
+    padding: 10px 25px 10px 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #475569;
+  text-align: center;
+  cursor: pointer;
+  height: 150px;
+}
+
+.drop-zone-content,
+.selected-file-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.selected-file-summary {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.drop-zone mat-icon {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.drop-zone-hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.selected-file-name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.selected-file-size {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+mat-card {
+  border-radius: 12px;
+}

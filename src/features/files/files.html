@@ -1,0 +1,29 @@
+<div class="files-page">
+  <div class="page-header">
+    <div>
+      <h2>Files</h2>
+      <p class="subtitle">Manage your uploaded files and recent changes.</p>
+    </div>
+    <button mat-flat-button color="primary" type="button" (click)="addFile()">
+      <mat-icon>add</mat-icon>
+      Add file
+    </button>
+  </div>
+
+  <mat-card appearance="outlined">
+    <table mat-table [dataSource]="files" class="files-table">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>File Name</th>
+        <td mat-cell *matCellDef="let file">{{ file.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastModified">
+        <th mat-header-cell *matHeaderCellDef>Last Modified</th>
+        <td mat-cell *matCellDef="let file">{{ file.lastModified | date:'short' }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card>
+</div>

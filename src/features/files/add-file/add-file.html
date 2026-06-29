@@ -1,0 +1,57 @@
+<div class="add-file-dialog">
+  <div class="dialog-header">
+    <div>
+      <h2 mat-dialog-title>Add File</h2>
+      <p class="subtitle">Upload a file and add the details for your workspace.</p>
+    </div>
+    <button mat-icon-button type="button" aria-label="Close" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="dialog-content">
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <form [formGroup]="form" class="file-form">
+          <div
+            class="drop-zone"
+            role="button"
+            tabindex="0"
+            (dragover)="preventDrop($event)"
+            (drop)="onDrop($event)"
+          >
+            @if (!selectedFile) {
+              <div class="drop-zone-content">
+                <mat-icon>cloud_upload</mat-icon>
+                <p><strong>Drag & drop files here</strong></p>
+                <p class="drop-zone-hint">or click to browse your device</p>
+                <input type="file" hidden #fileInput (change)="onFileSelected($event)" />
+                <button mat-stroked-button type="button" (click)="fileInput.click()">Choose file</button>
+              </div>
+            } @else {
+              <div class="selected-file-summary">
+                <mat-icon>insert_drive_file</mat-icon>
+                <div>
+                  <p class="selected-file-name">{{ selectedFile.name }}</p>
+                  <p class="selected-file-size">{{ selectedFile.size | fileSize }}</p>
+                </div>
+              </div>
+            }
+          </div>
+
+          <input type="hidden" formControlName="base64" />
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput rows="3" formControlName="description" placeholder="Add a short description"></textarea>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-stroked-button type="button" (click)="closeDialog()">Cancel</button>
+    <button matButton="filled" type="button" (click)="closeDialog()" [disabled]="form.invalid">Upload</button>
+  </mat-dialog-actions>
+</div>

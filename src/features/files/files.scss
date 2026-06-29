@@ -1,0 +1,27 @@
+.files-page {
+  padding: 1.5rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.page-header h2 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: #64748b;
+}
+
+.files-table {
+  width: 100%;
+}
+
+mat-card {
+  border-radius: 12px;
+}
